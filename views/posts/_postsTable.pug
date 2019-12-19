@@ -1,0 +1,5 @@
+each post in posts
+  div
+    a(href=`/posts/${post.slug}`) #{post.title}
+else
+  h3 No Posts

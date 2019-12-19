@@ -1,0 +1,35 @@
+{
+  "name": "expressBlog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon start.js --ignore public",
+    "dev": "concurrently \"npm start\" \"npm run watch\" --names \"💻,📦\" --prefix name",
+    "development": "node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "hot": "node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.1",
+    "pug": "^2.0.4",
+    "slug": "^1.1.0",
+    "tailwindcss": "^1.1.4"
+  },
+  "devDependencies": {
+    "concurrently": "^5.0.2",
+    "cross-env": "^6.0.3",
+    "laravel-mix": "^5.0.1",
+    "nodemon": "^2.0.2",
+    "sass": "^1.23.7",
+    "sass-loader": "^8.0.0",
+    "vue-template-compiler": "^2.6.11"
+  }
+}

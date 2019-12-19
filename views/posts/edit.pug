@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  h2 #{title}
+  form(method="POST")
+    .flex.flex-col
+      label(for="title") Title
+      input(type="text" name="title" id="title" value=post.title)
+    .flex.flex-col
+      label(for="body") Body
+      textarea#body(name="body", cols="30", rows="10") #{post.body}
+    button(type="text") Save Post

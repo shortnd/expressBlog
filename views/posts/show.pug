@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  h2 #{title}
+  div!= post.body
+  if post.comments
+    ul
+      each comment in post.comments
+        li #{comment.body}
+  //- pre= h.dump(post)
+  form(method="POST" action=`/posts/${post.slug}/comment`)
+    div
+      label(for="body") Body
+      textarea#body(name="body", cols="30", rows="10")
+    button(type="submit") Comment
+  a(href=`/posts/${post.slug}/edit`) Edit #{post.title}
+  form(method="POST" action=`/posts/${post.slug}/delete`)
+    button(type="submit") Delete #{post.title}

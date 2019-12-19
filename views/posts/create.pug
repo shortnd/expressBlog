@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  h2 #{title}
+  pre= h.dump(error)
+  form(method="POST")
+    label(for="title") Title
+    input(type="text" name="title" id="title" placeholder="Post Title")
+    label(for="body") Body
+    textarea#body(name="body", cols="30", rows="10")
+    button(type="submit") Add Post

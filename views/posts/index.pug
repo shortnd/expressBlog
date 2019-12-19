@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+  h2 #{title}
+  a(href="/posts/create") Create Post
+  input(type="text" id="postSearch" placeholder="Search posts")
+  #posts
+    each post in posts
+      div
+        a(href=`/posts/${post.slug}`) #{post.title}
+    else
+      h3 No Posts
